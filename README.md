@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
@@ -48,3 +49,7 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+=======
+# ASTROVENTURE
+ASTROVENTURE is an innovative mobile application that brings the wonders of space exploration directly to your fingertips. Developed using React Native and Expo Go, ASTROVENTURE integrates with NASA's APIs to deliver a dynamic and engaging user experience.  Explore daily Astronomy Picture of the Day (APOD), Mrs Rover images and much more
+>>>>>>> 375539a573b8da46bf21cc23438dade347819fa4
