@@ -17,6 +17,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
+          //in order to hide the navigation bar 
+          tabBarStyle: { display: 'none' }, // Hide tab bar on Home screen
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />

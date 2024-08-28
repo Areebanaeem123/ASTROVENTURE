@@ -1,70 +1,81 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import { StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { Text, View, ImageBackground, Image } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-
+import { useNavigation } from '@react-navigation/native';
 export default function HomeScreen() {
+  const navigation = useNavigation();
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ImageBackground
+      source={require('@/app/images/WhatsApp Image 2024-08-14 at 05.28.46_1523892e.jpg')}
+      style={styles.backgroundimage}
+    >
+      <View style={styles.container}>
+        <Text style={styles.title}>
+          ASTROV
+          <Text style={styles.wordE}>E</Text>
+          NTURE
+        </Text>
+        <Text style={styles.subtitle}>To space and Beyond</Text>
+      </View>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('explore')}>
+        <Text style={styles.buttonText}>Get started !</Text>
+      </TouchableOpacity>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  backgroundimage: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center', // Center vertically
+    alignItems: 'center', // Center horizontally
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: 'bold',
+   marginBottom:-6.5,
+   marginTop:90,
+    color: '#fff', // Adjust the color if needed
+  },
+  wordE: {
+    color: '#530303', 
+  },
+  subtitle: {
+    fontSize: 20,
+    color: '#fff',
+    marginBottom:550,
+    textAlign: 'center',
+  },
+  button: {
+    justifyContent: 'center',
     alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
+    backgroundColor: '#530303',
+    borderRadius: 20,
+    bottom: Platform.OS === 'web' ? 40 : 20,
     left: 0,
-    position: 'absolute',
+    right: 0,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '70%', // Adjust width as necessary
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 80, // Adds shadow on Android
+  },
+  buttonText:{
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'light',
+    lineHeight: 40, 
   },
 });
